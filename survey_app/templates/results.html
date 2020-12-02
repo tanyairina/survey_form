@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">    
+    <script src="{% static 'js/script.js' %}"></script>
+</head>
+<body>
+    <div id="header1">
+    <h1>Dojo Survey Index</h1>
+        <p>Result</p>
+    </div>
+    <div id = wrapper>
+        <form action="" method="GET">
+        {% csrf_token %}
+        <div id = all_data>
+            <h1>Submitted Info</h1>
+                <p>Name: {{name}}</p>
+                <p>Gender: {{gender}}</p>
+                <p>Location: {{loc}}</p>
+                <p>Language: {{lang}}</p>
+                <p>Comments: {{contnt}}</p>
+        </div>
+        <div id = "sub_button">
+        <button class="button" type="submit">Go Back</button>
+        </div>
+        </form>
+    </div>
+</body>
+</html>

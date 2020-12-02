@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojo Survey</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">    
+    <script src="{% static 'js/script.js' %}"></script>
+</head>
+<body>
+    <div id=header1>
+    <h1>Dojo Survey Index</h1>
+        <p>Form</p>
+    </div>
+    <div id=wrapper>
+        <form action="/result" method="POST">
+        {% csrf_token %}
+        <div id = all_data>
+        <h3>Info request:</h3>
+            <p>Name:   <input type="text" name='name'></p>
+            <p>Select your gender:</p>
+            <label for="male">Male </label>
+            <input type="radio" id="Male" name="gender" value="Male">
+            <label for="female">Female </label>
+            <input type="radio" id="Female" name="gender" value="Female">
+            <label for="decline">Other </label>
+            <input type="radio" id="Decline" name="gender" value="Decline">
+            <p>Locations:   <select name='location'>
+            <option value="Arlington">Arlington</option>
+            <option value="Bellevue">Bellevue</option>
+            <option value="Boise">Boise</option>
+            <option value="Chicago">Chicago</option>
+            <option value="Dallas">Dallas</option>
+            <option value="DC">DC</option>
+            <option value="Los Angeles">Los Angeles</option>
+            <option value="Oakland">Oakland</option>
+            <option value="Online">online</option>
+            <option value="Orange county">Orange County</option>
+            <option value="San Jose">San Jose</option>
+            <option value="Seattle">Seattle</option>
+            <option value="Tulsa">Tulsa</option>
+            </select></p>
+            <p>Languages:   <select name='language'>
+            <option value="Python">Python</option>
+            <option value="C#">C#</option>
+            <option value="Java">Java</option>
+            <option value="Javascript">JavaScript</option>
+            <option value="C">C</option>
+            </select></p>
+            <!-- <p>How did you hear about us?:</p>
+            <input type="checkbox" id="facebook" name="facebook" value=Facebook">
+            <label for="facebook">Facebook</label><br>
+            <input type="checkbox" id="newspaper" name="newspaper" value="Newspaper">
+            <label for="newspaper">Newspaper</label><br>
+            <input type="checkbox" id="referral" name="referral" value="Referral">
+            <label for="referral">Referral</label><br> -->
+            <h4>Comment (optional):</h4>
+            <textarea name="contnt"></textarea>
+            </div>
+            <div id = "sub_button">
+            <button class="button" type="submit">Submit</button>
+            </div>
+        </div>
+        </form>
+    </div>
+</body>
+</html>
